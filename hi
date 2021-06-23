@@ -1,0 +1,203 @@
+* { box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  position: relative;
+}
+
+.controller {
+  background-color: #333333;
+  width: 600px;
+  height: 540px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%) scale(.5);
+  left: 50%;
+  top: 50%;
+  border-radius: 96px;
+}
+
+.controller::before,
+.controller::after {
+  content: "";
+  position: absolute;
+  width: 185px;
+  height: 508px;
+  border: 16px solid rgba(0, 0, 0, .2);
+}
+
+.controller::before {
+  background-color: #00BBE3;
+  border-right: none;
+  border-radius: 96px 0 0 96px;
+}
+
+.controller::after {
+  right: 0;
+  background-color: #FF5D4C;
+  border-left: none;
+  border-radius: 0 96px 96px 0;
+}
+
+.controller-left,
+.controller-right {
+  position: absolute;
+}
+
+.controller-left {
+  top: 0;
+  left: 0;
+}
+
+.controller-right {
+  top: 0;
+  right: 0;
+}
+
+.controller-joystick {
+  position: absolute;
+  display: inline-block;
+  width: 105px;
+  height: 105px;
+  background-color: #333333;
+  z-index: 10;
+  border: 15px solid black;
+  border-radius: 50%;
+}
+
+.controller-left .controller-joystick {
+  top: 60px;
+  left: 60px;
+}
+
+.controller-right .controller-joystick {
+  top: 230px;
+  right: 60px;
+}
+
+.buttons {
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  transform: rotate(45deg)
+}
+
+.buttons.button-arrows button::after {
+  content: "";
+}
+
+.controller-left .buttons {
+  top: 215px;
+  left: 42px;
+}
+
+.controller-right .buttons {
+  top: 65px;
+  right: 45px;
+}
+
+.button {
+  background-color: black;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin: 8px;
+}
+
+.button-home,
+.button-capture {
+  position: absolute;
+  z-index: 1;
+  top: 380px;
+}
+
+.button-home {
+  border-radius: 25%;
+  left: 110px;
+}
+
+.button-capture {
+  right: 110px;
+}
+
+.button-top {
+  position: relative;
+  top: -10px;
+  width: 160px;
+  height: 110px;
+  background-color: black;
+  z-index: -1;
+}
+
+.controller-left .button-top {
+  left: -10px;
+  border-top-left-radius: 100px;
+}
+
+.controller-right .button-top {
+  right: -10px;
+  border-top-right-radius: 100px;
+}
+
+.controller-handle {
+  position: relative;
+  z-index: -1;
+  width: 110px;
+  height: 135px;
+  top: 100px;
+  background-color: #333;
+  border: 8px solid black;
+  border-top: none;
+  border-radius: 100px;
+  transform: scale(2, 4) skew(-25deg);
+}
+
+.controller-left .controller-handle {
+    left: -5px;
+}
+
+.controller-right .controller-handle {
+  transform: scale(2, 4) skew(25deg);
+  right: -57px;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.button-minus,
+.button-plus {
+  position: absolute;
+  z-index: 2;
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: black;
+  top: 40px;
+}
+
+.button-minus {
+  left: 160px;
+}
+
+.button-plus {
+  right: 160px;
+}
+
+.button-plus::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  transform: rotate(90deg);
+  background-color: inherit;
+  z-index: 2;
+}
